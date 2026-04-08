@@ -1,7 +1,63 @@
-// Contoh pengiriman data dari GitHub Page ke Google Script
-fetch('https://script.google.com/macros/s/AKfycbwGJqgws7XhcRFGkDme-eVRBWh6Lv7vOlDmgR8MCno92Rrmyottca_1PtMxL-BC1tDq/exec', {
-  method: 'POST',
-  body: JSON.stringify({ data: "sampel" })
-})
-.then(response => response.json())
-.then(data => console.log(data));
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uji Coba Koneksi GAS</title>
+</head>
+<body>
+    <h2>Mengirim data ke Google Script...</h2>
+    <p>Buka <b>Developer Tools (F12)</b> lalu masuk ke tab <b>Console</b> untuk melihat hasil respons.</p>
+
+    <script>
+        // Membungkus JavaScript di dalam tag <script> agar browser mengeksekusinya
+        const gasUrl = 'https://script.google.com/macros/s/AKfycbwGJqgws7XhcRFGkDme-eVRBWh6Lv7vOlDmgR8MCno92Rrmyottca_1PtMxL-BC1tDq/exec';
+        
+        fetch(gasUrl, {
+            method: 'POST',
+            body: JSON.stringify({ data: "sampel dari github pages" })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Berhasil:", data);
+            // Opsional: Menampilkan hasil di layar, bukan hanya di console
+            document.body.innerHTML += `<p style="color:green;">Respons diterima: ${JSON.stringify(data)}</p>`;
+        })
+        .catch(error => {
+            console.error("Gagal:", error);
+            document.body.innerHTML += `<p style="color:red;">Error: ${error}</p>`;
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uji Coba Koneksi GAS</title>
+</head>
+<body>
+    <h2>Mengirim data ke Google Script...</h2>
+    <p>Buka <b>Developer Tools (F12)</b> lalu masuk ke tab <b>Console</b> untuk melihat hasil respons.</p>
+
+    <script>
+        // Membungkus JavaScript di dalam tag <script> agar browser mengeksekusinya
+        const gasUrl = 'https://script.google.com/macros/s/AKfycbwGJqgws7XhcRFGkDme-eVRBWh6Lv7vOlDmgR8MCno92Rrmyottca_1PtMxL-BC1tDq/exec';
+        
+        fetch(gasUrl, {
+            method: 'POST',
+            body: JSON.stringify({ data: "sampel dari github pages" })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Berhasil:", data);
+            // Opsional: Menampilkan hasil di layar, bukan hanya di console
+            document.body.innerHTML += `<p style="color:green;">Respons diterima: ${JSON.stringify(data)}</p>`;
+        })
+        .catch(error => {
+            console.error("Gagal:", error);
+            document.body.innerHTML += `<p style="color:red;">Error: ${error}</p>`;
+        });
+    </script>
+</body>
+</html>
