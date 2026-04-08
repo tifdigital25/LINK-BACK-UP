@@ -1,29 +1,14 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Integrasi GAS</title>
+    <title>NetIntel Monolith</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+        iframe { width: 100%; height: 100%; border: none; }
+    </style>
 </head>
 <body>
-    <h2>Status Pengiriman Data GAS</h2>
-    <div id="output-respons">Menghubungi server...</div>
-
-    <script>
-        const gasUrl = 'https://script.google.com/macros/s/AKfycbwGJqgws7XhcRFGkDme-eVRBWh6Lv7vOlDmgR8MCno92Rrmyottca_1PtMxL-BC1tDq/exec';
-        // Hanya memodifikasi div ini, bukan seluruh halaman
-        const outputElement = document.getElementById('output-respons');
-        
-        fetch(gasUrl, {
-            method: 'POST',
-            body: JSON.stringify({ data: "sampel dari github pages" })
-        })
-        .then(response => response.json())
-        .then(data => {
-            outputElement.innerHTML = `<b style="color:green;">Berhasil: ${JSON.stringify(data)}</b>`;
-        })
-        .catch(error => {
-            outputElement.innerHTML = `<b style="color:red;">Gagal: ${error.message}</b>`;
-        });
-    </script>
+    <iframe src="https://script.google.com/macros/s/AKfycbwGJqgws7XhcRFGkDme-eVRBWh6Lv7vOlDmgR8MCno92Rrmyottca_1PtMxL-BC1tDq/exec"></iframe>
 </body>
 </html>
