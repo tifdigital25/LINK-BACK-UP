@@ -1,0 +1,7 @@
+// Contoh pengiriman data dari GitHub Page ke Google Script
+fetch('https://script.google.com/macros/s/AKfycbwGJqgws7XhcRFGkDme-eVRBWh6Lv7vOlDmgR8MCno92Rrmyottca_1PtMxL-BC1tDq/exec', {
+  method: 'POST',
+  body: JSON.stringify({ data: "sampel" })
+})
+.then(response => response.json())
+.then(data => console.log(data));
